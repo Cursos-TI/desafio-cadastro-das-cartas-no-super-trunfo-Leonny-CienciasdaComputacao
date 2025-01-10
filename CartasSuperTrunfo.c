@@ -51,12 +51,15 @@ int main() {
     float area13, area23, area33, area43, area53, area63, area73, area83;
     float area14, area24, area34, area44, area54, area64, area74, area84;
     
-
-    //CONINUAR DESTA PARTE
-    //CONTINUAR DESA PARTE - CONINUAR DESTA PARTE
-    double pib;
+    double pib11, pib21, pib31, pib41, pib51, pib61, pib71, pib81;
+    double pib12, pib22, pib32, pib42, pib52, pib62, pib72, pib82;
+    double pib13, pib23, pib33, pib43, pib53, pib63, pib73, pib83;
+    double pib14, pib24, pib34, pib44, pib54, pib64, pib74, pib84;
     
-    int turistico;
+    int turistico11, turistico21, turistico31, turistico41, turistico51, turistico61, turistico71, turistico81;
+    int turistico12, turistico22, turistico32, turistico42, turistico52, turistico62, turistico72, turistico82;
+    int turistico13, turistico23, turistico33, turistico43, turistico53, turistico63, turistico73, turistico83;
+    int turistico14, turistico24, turistico34, turistico44, turistico54, turistico64, turistico74, turistico84;
 
 //Apresentação.
 printf("Bem-vindo ao jogo de cartas Super Trunfo Países!\nA seguir será solicitado a você o preenchimento dos dados das cartas.\n");
@@ -70,9 +73,13 @@ scanf("%c", &letra1);
 printf("Digite o nome deste estado: \n");
 scanf(" %s", &nomeest1);
 
-//Primeira cidade
-printf("Digite o número corresondente a primeira cidade, deste estado (1 a 4): \n");
-scanf("%d", &nomecid11);
+//Primeira cidade.
+printf("Digite o nome da primeira cidade, deste estado: \n");
+scanf(" %s", &nomecid11);
+codigo11 = letra1*1;
+
+printf("%s", codigo11);
+
 printf("Digite o nome desta cidade");
 
     return 0;
