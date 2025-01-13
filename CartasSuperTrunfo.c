@@ -46,7 +46,7 @@ int main() {
     int populacao13, populacao23, populacao33, populacao43, populacao53, populacao63, populacao73, populacao83;
     int populacao14, populacao24, populacao34, populacao44, populacao54, populacao64, populacao74, populacao84;
     
-    float area11, area21, area31, area41, area51, area61, area71, area81;
+    int area11, area21, area31, area41, area51, area61, area71, area81;
     float area12, area22, area32, area42, area52, area62, area72, area82;
     float area13, area23, area33, area43, area53, area63, area73, area83;
     float area14, area24, area34, area44, area54, area64, area74, area84;
@@ -73,14 +73,30 @@ scanf("%c", &letra1);
 printf("Digite o nome deste estado: \n");
 scanf(" %s", &nomeest1);
 
-//Primeira cidade.
-printf("Digite o nome da primeira cidade, deste estado: \n");
+//Identificação primeira cidade.
+printf("Digite o número da primeira cidade, de %s (1 a 4): \n", nomeest1);
+scanf(" %d", &numero11);
+
+printf("Digite o nome da primeira cidade, de %s: \n", nomeest1);
 scanf(" %s", &nomecid11);
-codigo11 = letra1*1;
 
-printf("%s", codigo11);
+//Dados da primeira cidade
+printf("Digite a população de %s: \n", nomecid11);
+scanf(" %d", &populacao11);
 
-printf("Digite o nome desta cidade");
+printf("Digite a área de %s em Km2: \n", nomecid11);
+scanf(" %d", &area11);
+
+printf("Digite o PIB de %s em reais: \n", nomecid11);
+scanf(" %f", &pib11);
+
+printf("Digite o número de pontos turísticos em %s: \n", nomecid11);
+scanf(" %d", &turistico11);
+
+
+printf("O codigo é %c%d\n", letra1, numero11);
+
+
 
     return 0;
 }
