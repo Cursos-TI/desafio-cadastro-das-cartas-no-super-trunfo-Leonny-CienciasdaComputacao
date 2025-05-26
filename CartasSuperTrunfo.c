@@ -19,7 +19,11 @@ int main() {
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
 //Estado 1
-//identificação - nomeest = nome do estado -> nomecid = nome da cidade -> primeiro numeral após o nome da variável refere-se ao número do estado, segundo número identifica cidade.
+/* identificação: 
+-> nomeest = nome do estado 
+-> nomecid = nome da cidade 
+-> primeiro numeral após o nome da variável refere-se ao 
+número do estado, segundo número identifica cidade. */
     char letra1, letra2, letra3, letra4, letra5, letra6, letra7, letra8;
    
     char nomeest1[50], nomeest2[50], nomeest3[50], nomeest4[50], nomeest5[50], nomeest6[50], nomeest7[50], nomeest8[50];
@@ -93,8 +97,43 @@ scanf(" %f", &pib11);
 printf("Digite o número de pontos turísticos em %s: \n", nomecid11);
 scanf(" %d", &turistico11);
 
+//Identificação segunda cidade.
+printf("Digite o número da segunda cidade, de %s (1 a 4): \n", nomeest1);
+scanf(" %d", &numero12);
 
-printf("O codigo é %c%d\n", letra1, numero11);
+printf("Digite o nome da segunda cidade, de %s: \n", nomeest1);
+scanf(" %s", &nomecid12);
+
+//Dados da primeira cidade
+printf("Digite a população de %s: \n", nomecid12);
+scanf(" %d", &populacao12);
+
+printf("Digite a área de %s em Km2: \n", nomecid12);
+scanf(" %d", &area12);
+
+printf("Digite o PIB de %s em reais: \n", nomecid12);
+scanf(" %f", &pib12);
+
+printf("Digite o número de pontos turísticos em %s: \n", nomecid12);
+scanf(" %d\n", &turistico12);
+
+//PRIMEIRA CARTA
+printf("Código: %c%d\n", letra1, numero11);
+printf("Estado: %s\n", nomeest1);
+printf("Cidade: %s\n", nomecid11);
+printf("População: %d\n", populacao11);
+printf("Área em Km2: %d\n", area11);
+printf("PIB: %d\n", pib11);
+printf("Número de Pontos Turísticos: %d\n\n", turistico11);
+
+//SEGUNDA CARTA
+printf("Código: %c%d\n", letra1, numero12);
+printf("Estado: %s\n", nomeest1);
+printf("Cidade: %s\n", nomecid12);
+printf("População: %d\n", populacao12);
+printf("Área em Km2: %d\n", area12);
+printf("PIB: %d\n", pib12);
+printf("Número de Pontos Turísticos: %d\n", turistico12);
 
 
 
