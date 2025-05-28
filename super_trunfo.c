@@ -18,6 +18,8 @@ int main() {
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
+    //Adicionar densisade populacional e PIB per capita (desafio aventureiro)
+
 //Estado 1
 /* identificação: 
 -> nomeest = nome do estado 
@@ -64,6 +66,11 @@ número do estado, segundo número identifica cidade. */
     int turistico12, turistico22, turistico32, turistico42, turistico52, turistico62, turistico72, turistico82;
     int turistico13, turistico23, turistico33, turistico43, turistico53, turistico63, turistico73, turistico83;
     int turistico14, turistico24, turistico34, turistico44, turistico54, turistico64, turistico74, turistico84;
+
+    //Densidade populacional e PIB per capita - DESAFIO AVENTUREIRO
+    float pibpc1, pibpc2;
+    float densidade1, densidade2;
+
 
 //Apresentação.
     printf("Bem-vindo ao jogo de cartas Super Trunfo Países!\nA seguir será solicitado a você o preenchimento dos dados das cartas.\n");
@@ -115,30 +122,39 @@ número do estado, segundo número identifica cidade. */
         scanf(" %f", &pib12);
 
     printf("Digite o número de pontos turísticos em %s: \n", nomecid12);
-        scanf(" %d\n", &turistico12);
+        scanf(" %d", &turistico12);
+
+//DEFINIÇÃO DE DENSIDADE POPULACIONAL E PIB PER CAPITA
+    densidade1 = (float)populacao11 / area11;
+    densidade2 = (float)populacao12 / area12;
+    pibpc1 = pib11 / (float)populacao11;
+    pibpc1 = pib12 / (float)populacao12;
 
 //DEFINIÇÃO DOS CÓDIGOS
-    codigo11[4] = letra1 + numero11;
-    codigo12[4] = letra1 + numero12;
+    codigo11[5] = letra1, numero11;
+    codigo12[5] = letra1, numero12;
 
 //PRIMEIRA CARTA
-    printf("Código: %4s\n", codigo11);
+    printf("\n Código: %4s\n", codigo11);
     printf("Estado: %s\n", nomeest1);
     printf("Cidade: %s\n", nomecid11);
     printf("População: %d\n", populacao11);
-    printf("Área em Km2: %f\n", area11);
-    printf("PIB: %f\n", pib11);
-    printf("Número de Pontos Turísticos: %d\n\n", turistico11);
+    printf("Área em Km2: %.1f\n", area11);
+    printf("PIB: %.1f\n", pib11);
+    printf("Número de Pontos Turísticos: %d\n", turistico11);
+    printf("A densidade populacional é de: %.1f hab/km2\n", densidade1);
+    printf("O PIB per capita é de: R$ %.2f\n\n", pibpc1);
 
 //SEGUNDA CARTA
     printf("Código: %4s\n", codigo12);
     printf("Estado: %s\n", nomeest1);
     printf("Cidade: %s\n", nomecid12);
     printf("População: %d\n", populacao12);
-    printf("Área em Km2: %f\n", area12);
-    printf("PIB: %f\n", pib12);
+    printf("Área em Km2: %.1f\n", area12);
+    printf("PIB: %.1f\n", pib12);
     printf("Número de Pontos Turísticos: %d\n", turistico12);
-
+    printf("A densidade populacional é de: %.1f hab/km2\n", densidade2);
+    printf("O PIB per capita é de: R$ %.2f\n", pibpc2);
 
 
     return 0;
