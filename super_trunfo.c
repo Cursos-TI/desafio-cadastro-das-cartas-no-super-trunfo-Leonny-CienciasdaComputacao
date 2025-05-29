@@ -13,42 +13,26 @@ número do estado, segundo número identifica cidade. */
    
     char nomeest1[50], nomeest2[50];
     
-    int numero11, numero21;
-    int numero12, numero22;
-    int numero13, numero23;
-    int numero14, numero24;
-
+    int numero11, numero12;
+    
     char nomecid11[50], nomecid21[50];
     char nomecid12[50], nomecid22[50];
-    char nomecid13[50], nomecid23[50];
-    char nomecid14[50], nomecid24[50];
 
     char codigo11[3], codigo21[3];
     char codigo12[3], codigo22[3];
-    char codigo13[3], codigo23[3];
-    char codigo14[3], codigo24[3];
 
 
 //características.
-    unsigned long int populacao11, populacao21;
-    unsigned long int populacao12, populacao22;
-    unsigned long int populacao13, populacao23;
-    unsigned long int populacao14, populacao24;
+    unsigned long int populacao11, populacao12;
     
     float area11, area21;
     float area12, area22;
-    float area13, area23;
-    float area14, area24;
     
     float pib11, pib21;
     float pib12, pib22;
-    float pib13, pib23;
-    float pib14, pib24;
     
     int turistico11, turistico21;
     int turistico12, turistico22;
-    int turistico13, turistico23;
-    int turistico14, turistico24;
 
     //Densidade populacional e PIB per capita - DESAFIO AVENTUREIRO
     float pibpc1, pibpc2;
