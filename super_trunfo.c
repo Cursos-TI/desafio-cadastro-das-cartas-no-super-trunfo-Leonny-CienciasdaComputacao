@@ -47,10 +47,10 @@ número do estado, segundo número identifica cidade. */
 
 
 //características.
-    int populacao11, populacao21, populacao31, populacao41, populacao51, populacao61, populacao71, populacao81;
-    int populacao12, populacao22, populacao32, populacao42, populacao52, populacao62, populacao72, populacao82;
-    int populacao13, populacao23, populacao33, populacao43, populacao53, populacao63, populacao73, populacao83;
-    int populacao14, populacao24, populacao34, populacao44, populacao54, populacao64, populacao74, populacao84;
+    unsigned long int populacao11, populacao21, populacao31, populacao41, populacao51, populacao61, populacao71, populacao81;
+    unsigned long int populacao12, populacao22, populacao32, populacao42, populacao52, populacao62, populacao72, populacao82;
+    unsigned long int populacao13, populacao23, populacao33, populacao43, populacao53, populacao63, populacao73, populacao83;
+    unsigned long int populacao14, populacao24, populacao34, populacao44, populacao54, populacao64, populacao74, populacao84;
     
     float area11, area21, area31, area41, area51, area61, area71, area81;
     float area12, area22, area32, area42, area52, area62, area72, area82;
@@ -70,8 +70,7 @@ número do estado, segundo número identifica cidade. */
     //Densidade populacional e PIB per capita - DESAFIO AVENTUREIRO
     float pibpc1, pibpc2;
     float densidade1, densidade2;
-
-
+    
 //Apresentação.
     printf("Bem-vindo ao jogo de cartas Super Trunfo Países!\nA seguir será solicitado a você o preenchimento dos dados das cartas.\n");
 
@@ -93,7 +92,7 @@ número do estado, segundo número identifica cidade. */
 
 //Dados da primeira cidade
     printf("Digite a população de %s: \n", nomecid11);
-        scanf(" %d", &populacao11);
+        scanf(" %lu", &populacao11);
 
     printf("Digite a área de %s em Km2: \n", nomecid11);
         scanf(" %f", &area11);
@@ -113,7 +112,7 @@ número do estado, segundo número identifica cidade. */
 
 //Dados da primeira cidade
     printf("Digite a população de %s: \n", nomecid12);
-        scanf(" %d", &populacao12);
+        scanf(" %lu", &populacao12);
 
     printf("Digite a área de %s em Km2: \n", nomecid12);
         scanf(" %f", &area12);
@@ -127,34 +126,41 @@ número do estado, segundo número identifica cidade. */
 //DEFINIÇÃO DE DENSIDADE POPULACIONAL E PIB PER CAPITA
     densidade1 = (float)populacao11 / area11;
     densidade2 = (float)populacao12 / area12;
-    pibpc1 = pib11 / (float)populacao11;
-    pibpc1 = pib12 / (float)populacao12;
+    pibpc1 = pib11 / ((float)populacao11);
+    pibpc1 = pib12 / ((float)populacao12);
 
 //DEFINIÇÃO DOS CÓDIGOS
-    codigo11[5] = letra1, numero11;
-    codigo12[5] = letra1, numero12;
+    codigo11[20] = ("%c%d", letra1, numero11);
+    codigo12[20] = ("%c%d", letra1, numero12);
+
+//Super Poder (população + área + PIB + número de pontos turísticos + PIBpc + Inverso da densidade populacional)
+    float superpoder1, superpoder2;
+    superpoder1 = ((float)populacao11 + area11 + pib11 + (float)turistico11 + pibpc1) / densidade1;
+    superpoder1 = ((float)populacao12 + area12 + pib12 + (float)turistico12 + pibpc2) / densidade2;
 
 //PRIMEIRA CARTA
-    printf("\n Código: %4s\n", codigo11);
+    printf("\n Código: %20s\n", codigo11);
     printf("Estado: %s\n", nomeest1);
     printf("Cidade: %s\n", nomecid11);
-    printf("População: %d\n", populacao11);
+    printf("População: %lu\n", populacao11);
     printf("Área em Km2: %.1f\n", area11);
     printf("PIB: %.1f\n", pib11);
     printf("Número de Pontos Turísticos: %d\n", turistico11);
-    printf("A densidade populacional é de: %.1f hab/km2\n", densidade1);
-    printf("O PIB per capita é de: R$ %.2f\n\n", pibpc1);
+    printf("A densidade populacional é de: %.2f hab/km2\n", densidade1);
+    printf("O PIB per capita é de: R$ %.2f\n", pibpc1);
+    printf("O valor do Super PODER é: %.4f\n\n", superpoder1);
 
 //SEGUNDA CARTA
     printf("Código: %4s\n", codigo12);
     printf("Estado: %s\n", nomeest1);
     printf("Cidade: %s\n", nomecid12);
-    printf("População: %d\n", populacao12);
+    printf("População: %lu\n", populacao12);
     printf("Área em Km2: %.1f\n", area12);
     printf("PIB: %.1f\n", pib12);
     printf("Número de Pontos Turísticos: %d\n", turistico12);
-    printf("A densidade populacional é de: %.1f hab/km2\n", densidade2);
+    printf("A densidade populacional é de: %.2f hab/km2\n", densidade2);
     printf("O PIB per capita é de: R$ %.2f\n", pibpc2);
+    printf("O valor do Super PODER é: %.4f\n\n", superpoder2);
 
 
     return 0;
