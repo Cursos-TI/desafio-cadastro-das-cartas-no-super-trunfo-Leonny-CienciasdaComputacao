@@ -129,6 +129,18 @@ número do estado, segundo número identifica cidade. */
     printf("O PIB per capita é de: R$ %.2f\n", pibpc2);
     printf("O valor do Super PODER é: %.2f\n\n", superpoder2);
 
+    //Comparações entre características
+    
+    printf("Comparação entre as cartas (falso = 0 / verdadeiro = 1)\n\n");
+    printf("Carta %s venceu no quesito população? %d\n", nomecid11, ((int)populacao11 > (int)populacao12));
+    printf("Carta %s venceu no quesito área? %.0f\n", nomecid11, (double)(area11 > area12));
+    printf("Carta %s venceu no quesito PIB? %.0f\n", nomecid11, (double)(pib11 > pib12));
+    printf("Carta %s venceu no quesito Pontos Turísticos? %d\n", nomecid11, (turistico11 > turistico12));
+    printf("Carta %s venceu no quesito Densidade Populacional? %.0f\n", nomecid11, (double)(densidade1 < densidade2));
+    printf("Carta %s venceu no quesito PIB per Capita? %.0f\n", nomecid11, (double)(pibpc1 > pibpc2));
+    printf("Carta %s venceu no quesito Super Poder? %.0f\n", nomecid11, (double)(superpoder1 > superpoder2));
+    
+
 
     return 0;
 }
