@@ -91,19 +91,19 @@ número do estado, segundo número identifica cidade. */
         scanf(" %d", &turistico12);
 
 //DEFINIÇÃO DE DENSIDADE POPULACIONAL E PIB PER CAPITA
-    densidade1 = (float)populacao11 / area11;
-    densidade2 = (float)populacao12 / area12;
-    pibpc1 = pib11 / ((float)populacao11);
-    pibpc1 = pib12 / ((float)populacao12);
+    densidade1 = populacao11 / ((unsigned long int)area11);
+    densidade2 = populacao12 / ((unsigned long int)area12);
+    pibpc1 = ((unsigned long int)pib11) / populacao11;
+    pibpc1 = ((unsigned long int)pib12) / populacao12;
 
 //DEFINIÇÃO DOS CÓDIGOS
-    codigo11[20] = ("%c%d", letra1, numero11);
-    codigo12[20] = ("%c%d", letra1, numero12);
+    codigo11[20] = ("%c %d", letra1, numero11);
+    codigo12[20] = ("%c %d", letra1, numero12);
 
 //Super Poder (população + área + PIB + número de pontos turísticos + PIBpc + Inverso da densidade populacional)
     float superpoder1, superpoder2;
-    superpoder1 = ((float)populacao11 + area11 + pib11 + (float)turistico11 + pibpc1) / densidade1;
-    superpoder1 = ((float)populacao12 + area12 + pib12 + (float)turistico12 + pibpc2) / densidade2;
+    superpoder1 = (double)(populacao11 + area11 + pib11 + turistico11 + pibpc1) / densidade1;
+    superpoder1 = (double)(populacao12 + area12 + pib12 + turistico12 + pibpc2) / densidade2;
 
 //PRIMEIRA CARTA
     printf("\nCódigo: %20s\n", codigo11);
@@ -140,7 +140,44 @@ número do estado, segundo número identifica cidade. */
     printf("Carta %s venceu no quesito PIB per Capita? %.0f\n", nomecid11, (double)(pibpc1 > pibpc2));
     printf("Carta %s venceu no quesito Super Poder? %.0f\n", nomecid11, (double)(superpoder1 > superpoder2));
     
+//Determinando vencedor por atributo
 
+    if(populacao11 > populacao12) {
+        printf("No parâmetro POPULAÇÃO a cidade %s venceu.\n", nomecid11);
+    } else {
+        printf("No parâmetro POPULAÇÃO a cidade %s venceu.\n", nomecid12);
+    }
 
+    if(area11 > area12) {
+        printf("No parâmetro ÁREA a cidade %s venceu.\n", nomecid11);
+    } else {
+        printf("No parâmetro ÁREA a cidade %s venceu.\n", nomecid12);
+    }
+
+    if(pib11 > pib12) {
+        printf("No parâmetro PIB a cidade %s venceu.\n", nomecid11);
+    } else {
+        printf("No parâmetro PIB a cidade %s venceu.\n", nomecid12);
+    }
+
+    if(turistico11 > turistico12) {
+        printf("No parâmetro PONTOS TURÍSTICOS a cidade %s venceu.\n", nomecid11);
+    } else {
+        printf("No parâmetro PONTOS TURÍSTICOS a cidade %s venceu.\n", nomecid12);
+    }
+
+    if(densidade1 < densidade2) {
+        printf("No parâmetro DENSIDADE POPULACIONAL a cidade %s venceu.\n", nomecid11);
+    } else {
+        printf("No parâmetro DENSIDADE POPULACIONAL a cidade %s venceu.\n", nomecid12);
+    }
+
+    if(pibpc1 > pibpc2) {
+        printf("No parâmetro PIB PER CAPITA a cidade %s venceu.\n", nomecid11);
+    } else {
+        printf("No parâmetro PIB PER CAPITA a cidade %s venceu.\n", nomecid12);
+    }
+
+    
     return 0;
 }
